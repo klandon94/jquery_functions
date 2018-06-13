@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type = "text/javascript">
+
+        $(document).ready(function(){
+           
+            // Makes image fade in slowly (2000 ms)
+            $('#fdin').click(function(){
+                $('#firstimg').fadeIn(2000);
+            });
+
+            // Appends a new p tag
+            $('#apd').click(function(){
+                $('#append').append('<p>even more blah blah blah blah blah blah?</p>');
+            });
+
+            // Makes image fade out slowly
+            $('#fdout').click(function(){
+                $('#secondimg').fadeOut(2000);
+            })
+
+            // Adds newclass class to all paragraphs
+            $('#adcl').click(function(){
+                $('p').addClass('newclass');
+            })
+
+            // Removes newclass class and replaces it with newerclass for all paragraphs
+            $('#rmcl').click(function(){
+                $('p').removeClass('newclass').addClass('newerclass');
+            })  
+
+            // Changes html of the entire web page
+            $('#hl').click(function(){
+                $('body').html('<h1>Bwahahaha gotcha!</h1>');
+            })
+
+            // Adds new paragraph after every paragraph that already exists
+            $('#aft').click(function(){
+                $('p').after("<p>Don't sleep on Barry O</p>");
+            })
+
+            // Adds new header before every existing header
+            $('#bef').click(function(){
+                $('h1').before("<h1>Don't mind me I'm just a new header</h1>");
+            })
+
+            // Slidetoggles a hidden image
+            $('#slidetog').click(function(){
+                $('#thirdimg').slideToggle(2000);
+            })
+
+        })
+
+    </script>
+    <style>
+        div {
+            border-bottom: 3px solid gray;
+            padding-bottom:10px;
+        }
+
+        .btn{
+            border: 2px solid black;
+            border-radius:5px;
+        }
+
+        h1, p{
+            text-align:center;
+        }
+
+        .hidden{
+            display:none;
+        }
+
+        .newclass{
+            color:red;
+            font-style:italic;
+        }
+
+        .newerclass{
+            color:blue;
+            font-family:'Courier New', Courier, monospace;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="fadein">
+        <h1>Fade In</h1>
+        <button class='btn' id='fdin'>Fade In</button>
+        <img src="patrick.jpg" id='firstimg' class='hidden' style="width:220px; height:200px;">
+    </div>
+    <div id="append">
+        <h1>Append</h1>
+        <button class='btn' id='apd'>Append</button>
+        <p>blah blah blah blah blah blah blah blah blah</p>
+    </div>
+    <div id="fadeout">
+        <h1>Fade Out</h1>
+        <button class='btn' id='fdout'>Fade Out</button>
+        <img src="patrick.jpg" id='secondimg' style="width:220px; height:200px;">
+    </div>
+    <div id="addclass">
+        <h1>Add Class</h1>
+        <button class='btn' id='adcl'>Add Class</button>
+        <p>Click the button to add the newclass class to all paragraphs in this webpage</p>
+    </div>
+    <div id="removeclass">
+        <h1>Remove Class</h1>
+        <button class='btn' id='rmcl'>Remove Class</button>
+        <p>Click the button to remove the newclass class and replace it with newerclass for all paragraphs</p>
+    </div>
+    <div id="html">
+        <h1>HTML</h1>
+        <button class='btn' id='hl'>HTML</button>
+        <p>Click the button to change the HTML of the entire webpage. Beware!</p>
+    </div>
+    <div id="after">
+        <h1>After</h1>
+        <button class='btn' id='aft'>After</button>
+        <p>Click the button to add a new paragraph after every paragraph already in the webpage</p>
+    </div>
+    <div id="before">
+        <h1>Before</h1>
+        <button class='btn' id='bef'>Before</button>
+        <p>Click the button to add a new header before every header already in the webpage</p>
+    </div>
+    <div id="slidetoggle">
+        <h1>Slidetoggle</h1>
+        <button class='btn' id='slidetog'>Slidetoggle</button>
+        <img src="patrick.jpg" id='thirdimg' class='hidden' style="width:220px; height:200px;">
+        <p>Click the button to slidetoggle a hidden image</p>
+    </div>
+</body>
+</html>
